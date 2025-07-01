@@ -202,7 +202,7 @@ button:hover {
 
   #img-correo {
   position: absolute;
-  top: 70%;
+  top: 55%;
   right: 10px;
   transform: translateY(-50%);
   height: 16px;
@@ -213,7 +213,7 @@ button:hover {
 
   #img-invalido {
   position: absolute;
-  top: 65%;
+  top: 50%;
   right: -115px;
   transform: translateY(-50%);
   height: 100px;
@@ -281,3 +281,64 @@ button:hover {
   display: none; /* Aparece cuando sea necesario */
   }
 
+  /* Tercera Pagina- Pagina de inicio  */
+
+.header-box-pp {
+    background-color: #42ff00;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 0px;
+    border: 1px solid black;
+    position: relative; /* Necesario para centrar el h1 con posición absoluta si se necesita */
+}
+
+/* Bloques izquierdo y derecho */
+.header-izquierda, .header-derecha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Centrado absoluto del h1 */
+.header-title-pagina-principal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Iconos */
+.header-logo-pp {
+    width: 70px;
+    height: auto;
+}
+.header-usuario {
+    width: 40px;
+    height: 40px;
+}
+.header-buscar, .header-notificaciones, .header-carrito, .header-contactanos {
+    width: 40px;
+    height: auto;
+}
+
+.contenedor-izquierda {
+    width: 450px;        /* Ancho personalizado */
+    height: 450px;       /* Alto personalizado */
+    background-color: #ffffff; /* Color de fondo */
+    border: 2px solid #000000; /* Borde negro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 5px;       /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    overflow: auto;
+    margin: 10px;
+}
+
+.scroll-horizontal{
+    display: flex;
+}

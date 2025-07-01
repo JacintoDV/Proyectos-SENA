@@ -42,7 +42,8 @@
 
         <p class="iniciar-sesion">Iniciar sesion</p>
 
-        <form action="#" method="post" class = "formulariouno">
+        <form id="formLogin" class="formulariouno">
+
             <div style="position: relative;">
                 <label for="usuario">Usuario</label>
                 <div class=" input-icono-uno">
@@ -54,7 +55,7 @@
             </div>
 
             <label for="contraseña">Contraseña</label>
-            <input type="password" id="contraseña" name="contraseña" placeholder="Escribe tu contraseña" required>
+            <input type="password" id="contraseña" name="contrasena" placeholder="Escribe tu contraseña" required>
 
             <button type="submit" class="boton-enviar">Enviar</button>
 
@@ -69,5 +70,32 @@
     </footer>
 
     <script src="main.js" defer></script> 
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita que recargue la página
+
+        const form = new FormData(this);
+
+        fetch('login.php', {
+            method: 'POST',
+            body: form
+        })
+        .then(res => res.text())
+        .then(respuesta => {
+            if (respuesta.includes("¡Bienvenido")) {
+            alert("✅ Inicio de sesión exitoso");
+            // Redireccionar a otra página si deseas
+            // window.location.href = 'pagina_principal.html';
+            } else {
+            alert("❌ Usuario o contraseña incorrectos");
+            }
+        })
+        .catch(error => {
+            console.error("Error en la petición:", error);
+            alert("❗ Error al conectar con el servidor.");
+        });
+        });
+    </script>
+
 </body>
 </html>
